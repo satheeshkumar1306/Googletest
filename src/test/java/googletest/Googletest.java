@@ -17,12 +17,13 @@ public class Googletest {
 public void Googletest() throws IOException{
 	WebDriver wd= new FirefoxDriver();
 	wd.manage().window().maximize();
-	wd.get("https://www.google.com");
-	WebElement input= wd.findElement(By.id("html//body//div[1]//div[3]//form//div[2]//div[2]//div[1]//div[1]//div[2]//div//div//div[2]//div//input[3]"));
+	wd.get("https://www.bing.com");
+	WebElement input= wd.findElement(By.name("q"));
 	input.sendKeys("abc");
 	
 	File src=((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(src, new File("C:\\seleniumworkspace\\Googletest\\Screenshot\\test.jpg"));
+	FileUtils.copyFile(src, new File("C:\\seleniumworkspace\\Googletest\\Screenshot\\test.png"));
+	wd.quit();
 	
 }
 
